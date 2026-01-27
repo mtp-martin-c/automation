@@ -26,30 +26,31 @@ try:
     opcion = input("\n¿Qué operación desea realizar? (1/2): ").strip()
     
     # Procesar la selección del usuario
-    if opcion == "1":
-        resultado = operaciones.suma(numero1, numero2)
-        operacion_texto = "+"
-        print(f"\n✓ Resultado: {numero1} {operacion_texto} {numero2} = {resultado}")
-    
-    elif opcion == "2":
-        resultado = operaciones.resta(numero1, numero2)
-        operacion_texto = "-"
-        print(f"\n✓ Resultado: {numero1} {operacion_texto} {numero2} = {resultado}")
-    
-    elif opcion == "3":
-        resultado = operaciones.division(numero1, numero2)
-        operacion_texto = "/"
-        print(f"\n✓ Resultado: {numero1} {operacion_texto} {numero2} = {resultado}")
 
-    elif opcion == "4":
-        resultado = operaciones.multiplicacion(numero1, numero2)
-        operacion_texto = "*"
-        print(f"\n✓ Resultado: {numero1} {operacion_texto} {numero2} = {resultado}")
+    match opcion:
 
+        case "1":
+            resultado = operaciones.suma(numero1, numero2)
+            operacion_texto = "+"
+            print(f"\n✓ Resultado: {numero1} {operacion_texto} {numero2} = {resultado}")
 
-    else:
-        print("\n✗ Error: Debe seleccionar 1 o 2")
-        4
+        case "2":
+            resultado = operaciones.resta(numero1, numero2)
+            operacion_texto = "-"
+            print(f"\n✓ Resultado: {numero1} {operacion_texto} {numero2} = {resultado}")
+
+        case "3":
+            resultado = operaciones.division(numero1, numero2)
+            operacion_texto = "/"
+            print(f"\n✓ Resultado: {numero1} {operacion_texto} {numero2} = {resultado}")
+
+        case "4":
+            resultado = operaciones.multiplicacion(numero1, numero2)
+            operacion_texto = "*"
+            print(f"\n✓ Resultado: {numero1} {operacion_texto} {numero2} = {resultado}")
+        case _:
+            print("\n✗ Error: Debe seleccionar 1 o 2")
+            
 except ValueError:
     print("\n✗ Error: Debe ingresar números válidos")
 
